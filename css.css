@@ -63,11 +63,13 @@ code {
     text-transform: uppercase;
     letter-spacing: 0.3em;
     font-size: 30px;
-    transition: color 0.4s ease-in-out;
+    transition: letter-spacing 0.4s ease-in-out;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    color: white;
 }
 
 #hlavicka h1 a:hover {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.4em;
 }
 
 #obsah {
