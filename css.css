@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap&subset=latin-ext');
 
+@keyframes sviet {
+    0% {
+        color: #000000;
+        text-shadow: none;
+    }
+    100% {
+        color: #ffffff;
+    }
+}
 
 body {
     background-image: linear-gradient(to top, #FFF886 10%, #F072B6 100%);
@@ -59,6 +68,8 @@ code {
 }
 
 #hlavicka h1 a {
+    animation: 1s ease-in-out 0s 1 sviet;
+
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.3em;
