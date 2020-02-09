@@ -31,6 +31,10 @@ li {
     margin: 10px 0;
 }
 
+code {
+    font-size: 14px;
+}
+
 .kontajner {
     width: 900px;
     margin-right: auto;

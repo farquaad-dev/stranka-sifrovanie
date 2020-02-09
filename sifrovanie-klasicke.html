@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Klasické techniky | Kódovanie a šifrovanie</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+
+<body>
+    <div class="kontajner">
+		<div id="hlavicka">
+			<h1><a href="index.html">Kódovanie a šifrovanie</a></h2>
+		</div>
+
+		<div id="obsah">
+			<div id="panel">
+				<ul class="menu">
+					<li><a href="index.html">Úvod<a></li>
+					<li><a href="kodovanie.html">Kódovanie</a></li class="aktivne">
+					<li class="aktivne"><a href="sifrovanie.html">Šifrovanie</a></li class="aktivne">
+					<ul class="vnorene aktivne">
+						<li class="aktivne"><a href="sifrovanie-klasicke.html">Klasické techniky</a></li>
+						<li><a href="sifrovanie-moderne.html">Moderné techniky</a></li>
+						<li><a href="sifrovanie-pubkey.html">Šifry s verejným kľúčom</a></li>
+					</ul>
+				</ul>
+			</div>
+
+			<div id="okno">
+				<div id="text">
+					<h2>Klasické techniky</h2>
+					<h3>Substitučné šifrovacie systémy</h3>
+					<p>Substitučná šifra nahradzuje každý znak otvoreného textu iným znakom šifrovaného textu. Aby príjemca získal otvorený text, musí na zašifrovaný text použit inverznú substitúciu. V klasickej kryptografii existujú štyri typy substitučných šifier:
+					</p>
+					<ul>
+						<li><strong>Jednoduchá substitučná šifra</strong> (<em>monoalfabetická šifra</em>) je taká šifra, v ktorej sa každý znak otvoreného textu nahradzuje príslušným znakom šifrovaného textu.</li>
+						<li><strong>Homofónna substitučná šifra</strong> sa podobá jednoduchému substitučnému systému. Jeden znak otvoreného textu môže byt nahradený jedným znakom z niekolko možných znakov šifrovaného textu. Znak “A” by mohol byt nahradený napr. 5, 13, 25 alebo 56, “B” napr. 7, 19, 31 alebo 42 atd.</li>
+						<li><strong>Polygramová substitučná šifra</strong> je taká, v ktorej šifrovanie prebieha medzi skupinami znakov. Napríklad skupina “ABA” môže byt nahradená skupinou “RTQ”, “ABB” skupinou “SLL” atd.</li>
+						<li><strong>Polyalfabetická substitučná šifra</strong> sa skladá z niekolko jednoduchých šifier. Napríklad túto šifru môže tvorit pät rôznych, jednoduchých substitučných šifier; jednotlivé šifry sú postupne aplikované na jednotlivé po sebe idúce znaky otvoreného textu. Medzi substitučné šifry napríklad patri Caesarova šifra alebo Vernamova šifra.</li>
+					</ul>
+
+					<h3>Transpozičné šifrovacie systémy</h3>
+					<p>Pri transpozičných šifrách sa znaky otvoreného textu nemenia, mení sa iba ich usporiadanie. Pri jednoduchej stlpcovej transpozicnej šifre sa otvorený text zapisuje horizontálne na štvorcekovaný papier a zašifrovaný text sa získava jeho vertikálnym čítaním. Pri dešifrovaní sa šifrovaný text zapíše vertikálne opät na štvorcekovaný list papiera rovnakej šírky a číta sa horizontálne.</p>
+
+					<p style="text-align: center;">
+					Otvorený  text:&nbsp;&nbsp;<code>jednoduchastlpcovatranspozicnasifra</code><br>
+					Šifrovaný text:&nbsp;&nbsp;<code>jloepzdcinocovndaautscrihafanrssatp</code>
+					</p>
+
+					<p>Pretože znaky šifrovaného aj otvoreného textu sú rovnaké, bude sa frekvenčný výskyt jednotlivých znakov šifrovaného textu približne rovnat frekvenčnému výskytu znakov v príslušnom národnom jazyku. Navyše je tento systém náročný na pamät a niekedy aj obmedzuje dlžku správ. Sem patria napríklad: Cardanova mriežka, Richelieuova šifra.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="foota">&copy; 2020 kristina</div>
+	</div>
+</body>
+</html>
