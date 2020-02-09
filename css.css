@@ -65,7 +65,7 @@ p {
     min-height: 750px;
 }
 
-.menu {
+.menu, .menu .vnorene {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -83,6 +83,15 @@ p {
 
 .menu li.aktivne {
     background: rgba(255, 255, 255, 0.3);
+    font-weight: 700;
+}
+
+.menu .vnorene.aktivne {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.menu .vnorene li {
+    padding-left: 20px;
 }
 
 .menu li:hover {
