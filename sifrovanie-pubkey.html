@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Asymetrické šifrovanie | Kódovanie a šifrovanie</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+
+<body>
+    <div class="kontajner">
+		<div id="hlavicka">
+			<h1><a href="index.html">Kódovanie a šifrovanie</a></h2>
+		</div>
+
+		<div id="obsah">
+			<div id="panel">
+				<ul class="menu">
+					<li><a href="index.html">Úvod<a></li>
+					<li><a href="kodovanie.html">Kódovanie</a></li class="aktivne">
+					<li class="aktivne"><a href="sifrovanie.html">Šifrovanie</a></li class="aktivne">
+					<ul class="vnorene aktivne">
+						<li><a href="sifrovanie-klasicke.html">Klasické techniky</a></li>
+						<li><a href="sifrovanie-moderne.html">Moderné techniky</a></li>
+						<li class="aktivne"><a href="sifrovanie-pubkey.html">Asymetrické šifrovanie</a></li>
+					</ul>
+				</ul>
+			</div>
+
+			<div id="okno">
+				<div id="text">
+					<h2>Asymetrické šifrovanie</h2>
+					<p>Veľmi významným krokom v kryptografii bolo vytvorenie postupov asymetrického šifrovania. Úžasné na asymetrickej šifre je, že na rozdiel od symetrickej, odosielateľ a prijímateľ sa nemusia stretnúť a dohodnúť sa na jednotnom spoločnom kľúči. Pri asymetrickej šifre máme dva rôzne kľúče, ktoré sú spolu úzko matematicky prepojené. Jeden slúži na šifrovanie správy (šifrovací kľúč), zatiaľ čo druhý na jej dešifrovanie (dešifrovací kľúč).</p>
+					<p>V prípade, že chceme poslať tajnú správu konkrétnej osobe, zašifrovanú správu by mal vedieť dešifrovať dešifrovacím kľúčom iba ten, pre koho je určená a nikto iný. V tom prípade musí byť dešifrovací kľúč súkromný (jeho vlastník si ho drží v bezpečí) a keďže zašifrovať správu pre príjemcu šifrovacím kľúčom by mal mať možnosť každý, šifrovací kľúč je verejný.</p>
+					<p>V prípade, že nechceme utajiť obsah, len chceme jednoznačne deklarovať, že danú správu posielame my, práve my a nikto iný, tak môžeme dať pod správu pečať kráľovským prsteňom. Alebo môžeme správu zašifrovať – podpísať. Správu by sme mali vedieť zašifrovať len my, a dešifrovať hocikto iný. V tom prípade musí byť dešifrovací kľúč verejný a šifrovací kľúč súkromný.</p>
+
+					<h3>Všeobecný postup pri asymetrickom šifrovaní tajnej správy</h3>
+					<p>Alica chce poslať Betke tajnú správu. Prečítať ju môže iba Betka, teda má byť dešifrovateľná iba jej súkromným kľúčom, z čoho vyplýva, že ju Alica musí zašifrovať jej verejným kľúčom. Aký bude postup?</p>
+					<ol>
+						<li>Betka si vygeneruje svoju dvojicu kľúčov. Jednu časť zverejní (verejný kľúč), druhú si ponechá (súkromný kľúč).</li>
+						<li>Alica si skopíruje Betkin verejný kľúč.</li>
+						<li>Alica zašifruje správu Betkiným verejným kľúčom.</li>
+						<li>Alica pošle zašifrovanú správu Betke.</li>
+						<li>Betka prijatú správu dešifruje svojim súkromným kľúčom.</li>
+					</ol>
+					<p>Pre úplnosť dodajme, že ak chce Betka odpísať Alici, musí si nahrať jej verejný kľúč a správu zašifrovať ním.</p>
+
+					<h3>Všeobecný postup pri asymetrickom šifrovaní digitálneho podpisu</h3>
+					<p>Betka chce poslať Alici správu. Betka chce mať istotu, že správu cestou ku Alici nikto nepozmení. Musí byť isté, že správu nezašifroval nikto iný, len Betka, zašifruje ju teda svojím súkromným kľúčom. Prečítať ju môže každý, teda má byť dešifrovateľná Betkiným verejným kľúčom. Aký bude postup?</p>
+					<ol>
+						<li>Betka si vygeneruje svoju dvojicu kľúčov. Jednu časť zverejní (verejný kľúč), druhú si ponechá (súkromný kľúč).</li>
+						<li>Alica si skopíruje Betkin verejný kľúč.</li>
+						<li>Betka zašifruje správu svojím súkromným kľúčom.</li>
+						<li>Betka pošle zašifrovanú správu Alici .</li>
+						<li>Alica prijatú správu dešifruje Betkiným verejným kľúčom.</li>
+					</ol>
+
+					<h3>Matematický princíp</h3>
+					<p>Ako je možné, že dešifrovací kľúč je iný ako šifrovací? Ukážeme si to na zjednodušenom príklade:</p>
+					<p>Majme množinu čísel 0,1,2…7. V matematike sa označuje ako zvyšková trieda Z<sub>8</sub>. Sčítanie pre takúto množinu je definované cyklicky, čiže 7+1=0. Teraz si predstavme, že šifrovací kľúč je 3 a dešifrovací kľúč je 5 (číslo 5 je inverzné k číslu 3 vo zvyškovej triede Z<sub>8</sub>). Chcem zašifrovať správu, ktorá pozostáva z čísla 7. Najprv ju zašifrujem tak, že pričítam šifrovací kľúč (7+3=2). Dešifrujem ju tak, že pričítam dešifrovací kľúč (2+5=7). Vo výsledku vlastne máme 7+3+5 = 7+0 = 7.</p>
+					<p>Bezpečnosť algoritmu (t.j. za aký čas je možné prelomiť algoritmus a dostať sa k pôvodnej správe bez znalosti druhého kľúča) je daná náročnosťou matematického výpočtu. Pri naozajstnom šifrovaní sa používajú zvyškové triedy veľmi veľkých čísel.</p>
+					<p>Matematický princíp je síce zložitá matematická funkcia, ale zjednodušene hovorí to, že ak aplikujeme na správu oba kľúče, dostaneme znova pôvodnú správu. Ak sa nad tým trochu zamyslíme, uvedomíme si, že asymetrické šifrovanie je len špeciálnym prípadom symetrického šifrovania – len tá symetria je podľa „inej osi“… Pri symetrickom šifrovaní máme napríklad posun o +K, pričom dešifrovací kľúč by bol inverzný, a síce -K. Pri asymetrickom šifrovaní musí byť dešifrovací kľúč tiež inverzný ku šifrovaciemu, lenže v priestore zvyškových tried.</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="foota">&copy; 2020 kristina</div>
+	</div>
+</body>
+</html>
