@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap&subset=latin-ext');
+
+
+body {
+    background-image: linear-gradient(to top, #FFF886 10%, #F072B6 100%);
+    /*background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);*/
+    font-family: 'Quicksand', sans-serif;
+}
+
+a, a:visited {
+    color: #111111;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+p {
+    line-height: 1.4;
+    margin: 0 0 1em;
+    word-wrap: break-word;
+}
+
+.kontajner {
+    width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#hlavicka {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    height: 80px;
+    line-height: 80px;
+}
+
+#hlavicka h1 {
+    vertical-align: middle;
+    text-align: center;
+}
+
+#hlavicka h1 a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 30px;
+    transition: color 0.4s ease-in-out;
+}
+
+#hlavicka h1 a:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+#obsah {
+    overflow: auto;
+    display: flex;
+}
+
+#panel {
+    background-color: rgba(72, 72, 72, 0.3);
+    border-bottom-left-radius: 15px;
+    float: left;
+    width: 200px;
+    min-height: 750px;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    padding: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.menu li a {
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu li:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.menu li:hover a {
+    color: #fff;
+}
+
+#okno {
+    background-color: rgba(20, 20, 20, 0.3);
+    border-bottom-right-radius: 15px;
+    width: 700px;
+    min-height: 750px;
+}
+
+#text {
+    padding: 0 20px 10px;
+    font-weight: 500;
+}
+
+#foota {
+    margin: 10px 0;
+}
