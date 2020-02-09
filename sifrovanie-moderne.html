@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Moderné techniky | Kódovanie a šifrovanie</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+
+<body>
+    <div class="kontajner">
+		<div id="hlavicka">
+			<h1><a href="index.html">Kódovanie a šifrovanie</a></h2>
+		</div>
+
+		<div id="obsah">
+			<div id="panel">
+				<ul class="menu">
+					<li><a href="index.html">Úvod<a></li>
+					<li><a href="kodovanie.html">Kódovanie</a></li class="aktivne">
+					<li class="aktivne"><a href="sifrovanie.html">Šifrovanie</a></li class="aktivne">
+					<ul class="vnorene aktivne">
+						<li><a href="sifrovanie-klasicke.html">Klasické techniky</a></li>
+						<li class="aktivne"><a href="sifrovanie-moderne.html">Moderné techniky</a></li>
+						<li><a href="sifrovanie-pubkey.html">Šifry s verejným kľúčom</a></li>
+					</ul>
+				</ul>
+			</div>
+
+			<div id="okno">
+				<div id="text">
+					<h2>Moderné techniky</h2>
+					<h3>Symetrické šifrovacie systémy</h3>
+					<p>V základnom delení bolo spomínané, že medzi tradičné šifrovacie systémy patria aj symetrické šifry. Využívajú vhodne zvolené kombinácie substitučných a transpozičných algoritmov. Tento šifrovací systém sa nazýva symetrický preto, lebo šifrovací klúč je možné odvodit z dešifrovacieho a naopak. Väcšina symetrických algoritmov má rovnaký šifrovací aj dešifrovací klúč. Tieto algoritmy označované ako algoritmy tajného klúča vyžadujú, aby sa príjemca aj odosielatel vopred dohodli na klúči, ktorý budú používat. Bezpečnosť je založená na utajení klúča. Ak sa používa dlhšiu dobu, vzniká nebezpečenstvo, že klúč padne do nepovolaných rúk a obsah utajovaných informácií sa prezradí. Preto sa klúče casto obmienajú - nazývame ich aj “klúče pre sedenie” (session - relácia).</p>
+					<p>Symetrické šifry sa delia na dva druhy. <strong>Prúdové šifry</strong> spracovávajú otvorený text po jednotlivých bitoch. <strong>Blokové šifry</strong> rozdelia otvorený text na bloky rovnakej veľkosti a doplní vhodným spôsobom posledný blok na danú veľkosť. U väčšiny šifier sa používa 64 bitový blok, AES používa 128 bitov, prípadne 256 bitov.</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="foota">&copy; 2020 kristina</div>
+	</div>
+</body>
+</html>
