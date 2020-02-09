@@ -81,6 +81,10 @@ p {
     transition: color 0.3s ease-in-out;
 }
 
+.menu li.aktivne {
+    background: rgba(255, 255, 255, 0.3);
+}
+
 .menu li:hover {
     background: rgba(0, 0, 0, 0.5);
 }
