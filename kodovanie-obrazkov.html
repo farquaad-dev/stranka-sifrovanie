@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Kódovanie obrázkov | Kódovanie a šifrovanie</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+
+<body>
+    <div class="kontajner">
+		<div id="hlavicka">
+			<h1><a href="index.html">Kódovanie a šifrovanie</a></h2>
+		</div>
+
+		<div id="obsah">
+			<div id="panel">
+				<ul class="menu">
+					<li><a href="index.html">Úvod<a></li>
+					<li class="aktivne"><a href="kodovanie.html">Kódovanie</a></li class="aktivne">
+					<ul class="vnorene aktivne">
+						<li><a href="kodovanie-cisel.html">Kódovanie čísel</a></li>
+						<li><a href="kodovanie-textu.html">Kódovanie textu</a></li>
+						<li class="aktivne"><a href="kodovanie-obrazkov.html">Kódovanie obrázkov</a></li>
+						<li><a href="kodovanie-ine.html">Iné kódy</a></li>
+					</ul>
+					<li><a href="sifrovanie.html">Šifrovanie</a></li>
+				</ul>
+			</div>
+
+			<div id="okno">
+				<div id="text">
+					<h2>Kódovanie obrázkov</h2>
+					<p>Aby bol obrázok farebný, musíme každému bodu - pixelu obrázka priradiť určitú farbu. Spôsobov, akými sa to dá urobiť je opäť niekoľko. Na to, aby sme to vedeli urobiť, musíme vedieť niečo o ľudskom oku a spôsobe videnia farieb.</p>
+					<p>Farby vnímame vďaka svetlu, ktoré vstupuje do nášho oka a dopadá na bunky - čapíky, ktoré sú citlivé na farbu. Svetlo je vlastne elektromagnetické vlnenie s rôznou vlnovou dĺžkou. Ľudské oko dokáže vnímať iba určitý rozsah vlnových dĺžok svetla. Svetlo s najväčšou vlnovou dĺžkou, ktoré ľudské oko vníma, je červenej farby (780 nm) a svetlo s najnižšou vlnovou dĺžkou je svetlo fialovej farby (380 nm).</p>
+					<p>V tomto spektre farieb je ľudské oko schopné bez problémov rozlíšiť vyše 1,5 milióna rôznych farieb. Nie však každej farbe, ktorú rozlíšime pripadá iná vlnová dĺžka, pretože podľa intenzity dopadajúceho svetla, ľudské oko rozlišuje sýtosť a jas daného odtieňa farby. Takže iná vlnová dĺžka prislúcha iba rôznym odtieňom farieb.</p>
+
+					<h3>Farebný model RGB</h3>
+					<img src="img/rgb.jpg" alt="Farebný model RGB" class="float-right" width="200px">
+					<p>Farebný model <strong>RGB</strong> je najčastejšie využívané kódovanie farby bodu obrázka. Empiricky sa zistilo, že takmer všetky farby sa dajú vytvoriť zmiešaním ľubovoľných troch nezávislých farieb (t.j. že pomocou zmiešania dvoch nedostaneme tretiu). Najvýhodnejšie pre výrobu svetelných lúčov (aditívny farebný systém) bolo použitie farieb červená (Red), zelená (Green), modrá (Blue).</p>
+					<p>Aby sme vedeli vytvoriť 1,5 milióna farieb stačí, ak každú z týchto farieb rozdelíme na 115 oddtieňov, ktorých zmiešaním v rôznych pomeroch vzniknú všetky farby. Kvôli uchovaniu v pamäti počítača, je však výhodnejšie použiť až 256 odtieňov každej farby (8 bitov), čo nám umožní vytvoriť až 16 777 216 rôznych farieb. Pri takomto kódovaní je každá farba zakódovaná 24 bitmi, čo sú tri pamäťové miesta počítača. Pričom (<span style="color: red">255</span>, <span style="color: green">0</span>, <span style="color: blue">0</span>) je sýta červená farba, (<span style="color: red">0</span>, <span style="color: green">255</span>, <span style="color: blue">0</span>) je sýta zelená farba, (<span style="color: red">0</span>, <span style="color: green">0</span>, <span style="color: blue">255</span>) je sýta modrá farba, (<span style="color: red">0</span>, <span style="color: green">0</span>, <span style="color: blue">0</span>) je čierna farba a (<span style="color: red">255</span>, <span style="color: green">255</span>, <span style="color: blue">255</span>) je biela farba.</p>
+
+					<h3>Farebný model CMY</h3>
+					<img src="img/cmyk.jpg" alt="Farebný model CMY" class="float-left" width="200px">
+					<p>Farebný model CMY je model, ktorý používa doplnkové farby (substraktívny farebný systém). V modeli RGB platilo, že ak zmiešame všetky tri základné farby s maximálnou sýtosťou, dostaneme bielu farbu. Takýto spôsob je výhodný pri obrazovkách monitorov, pretože tienidlo je čierne. Pri tlačiarňach sa však tlačí na biely papier, preto potrebujeme vziať také farby, pri ktorých, ak zmiešame ich najsýtejšie odtiene, dostaneme čiernu farbu. Takéto farby dostaneme, keď zoberieme doplnkové farby k farbám červená, zelená a modrá. Týmito farbami sú azúrová (Cyan), purpurová (Magenta) a žltá (Yellow). Kvôli tomu, že je lacnejšie vyrobiť čierny atrament ako ho miešať pomocou týchto troch farieb, sa k týmto farbám pridáva i samostatná čierna farba a tento model sa označuje tiež CMYK, kde posledné písmeno je odvodené od blacK - čierna . Výhodou tohto formátu je tá, že výsledná farba CMY sa dá veľmi jednoducho získať z modelu RGB pomocou vzorcov:</p>
+					<p>C = (255 - R); M = (255 - G); Y = (255 - B)</p>
+
+					<h3>Reprezentácia grafickej informácie</h3>
+					<h4>Rastrová grafika</h4>
+					<p>Je to spôsob uloženia grafických údajov pomocou farieb jednotlivých bodov obrazu. Jeho podstatou je rozloženie obrazu na jednotlivé zobraziteľné body – pixely. Počet pixelov pomocou ktorých je obrázok uložený sa údáva v pixeloch na výšku a šírku. Napríklad 1024x768, hovoríme tomu rozlíšenie obrázka, alebo tiež raster. Teda súbor obsahujúci údaje o rastrovej grafike obsahuje informácie o farbe jednotlivých pixelov. Samozrejme farba je zakódovaná binárnym kódom do postupnosti núl a jednotiek.</p>
+
+					<h4>Vektorová grafika</h4>
+					<p>Pri použití vektorovej grafiky nepracujeme z jednotlivými pixelmi obrázku, ale so základnými objektmi (úsečky, kružnice, oblúky, mnohouholníky, transformácie, farby), ktoré  umožňujú vytvárať výsledný obrázok. V súbore vektorovej grafiky sú uložené príkazy, ktoré určujú ako sa výsledný obrázok poskladá zo základných tvarov a ich úpravami - zmenou tvaru, transformáciou, zmenou farby a inými. Výhodou oproti bitmapovej grafike je možnosť zväčšovať a zmenšovať obrázok bez zmeny kvality.</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="foota">&copy; 2020 kristina</div>
+	</div>
+</body>
+</html>
