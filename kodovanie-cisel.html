@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Kódovanie čísel | Kódovanie a šifrovanie</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+
+<body>
+    <div class="kontajner">
+		<div id="hlavicka">
+			<h1><a href="index.html">Kódovanie a šifrovanie</a></h2>
+		</div>
+
+		<div id="obsah">
+			<div id="panel">
+				<ul class="menu">
+					<li><a href="index.html">Úvod<a></li>
+					<li class="aktivne"><a href="kodovanie.html">Kódovanie</a></li class="aktivne">
+					<ul class="vnorene aktivne">
+						<li class="aktivne"><a href="kodovanie-cisel.html">Kódovanie čísel</a></li>
+						<li><a href="kodovanie-textu.html">Kódovanie textu</a></li>
+						<li><a href="kodovanie-obrazkov.html">Kódovanie obrázkov</a></li>
+						<li><a href="kodovanie-ine.html">Iné kódy</a></li>
+					</ul>
+					<li><a href="sifrovanie.html">Šifrovanie</a></li>
+				</ul>
+			</div>
+
+			<div id="okno">
+				<div id="text">
+					<h2>Kódovanie čísel</h2>
+                    <p>Všetky údaje v počítači sú kódované pomocou rôznej kombinácie hodnôt bitov – najmenšej jednotky informácie. Každý z bitov môže nadobúdať iba dve rôzne hodnoty 0 a 1. Tieto bity sú však do pamäťových buniek počítača ukladané po ôsmich, preto je výhodné na zakódovanie údajov použiť vždy taký počet bitov, ktorý je deliteľný ôsmimi (8, 16, 24, 32....). Čím väčší počet bitov použijeme, tým väčší rozsah čísel môžeme použiť. Napríklad pomocou 8 bitov dostaneme 28 = 256 rôznych kombinácií núl a jednotiek. Pomocou 8 bitov teda môžeme zakódovať napríklad čísla od 0 do 255 alebo čísla od -128 do 127 v prípade, že potrebujeme i záporné čísla. Na kódovanie čísiel v počítačoch je najvýhodnejšie použiť jedno „slovo“ (word), t. j. taký počet bitov, ktoré počítač dokáže spracovať počas jednej operácie (jedného taktu procesora). Najmodernejšie počítače dnes používajú 64 bitové slovo, teda dokážu spracovať 64 bitov pri jednej operácii.</p>
+
+                    <h3>Kódovanie prirodzených čísel a nuly</h3>
+                    <p>Obrovskou výhodou je fakt, že každé číslo môžeme previesť do dvojkovej sústavy, ktorá používa iba cifry 0 a 1, čím pre každé číslo dostaneme jednoznačný zápis. Prirodzené čísla sú teda v počítači uložené v tzv. priamom kóde, čo je vlastne číslo prevedené do dvojkovej sústavy.</p>
+                    <p>Pri použití jedného bajtu (8 bitov) môžeme zakódovať 256 možných hodnôt, t. j. hodnoty 0 až 255. Pri použití 2 bajtov (16 bitov) hodnoty 0 až 65 535. Pri použití 4 bajtov (32 bitov) hodnoty 0 až 4 294 967 295. Pri použití 1 slova moderného počítača (64 bitov) hodnoty 0 až 18 446 744 073 709 551 615, čo sú už astronomické čísla.</p>
+                    <p>V niektorých prípadoch (napríklad pri prenose) je vhodnejšie použiť iný kód ako je zápis čísla v dvojkovej sústave. Jedným z takýchto kódov je kód BCD.</p>
+
+                    <h3>Kódovanie celých čísel</h3>
+                    <p>Pri celých číslach je potrebné zohľadniť i znamienko. Našťastie sú znamienka len dve (+, -), preto ich môžeme zakódovať 1 bitom (0 = +, 1= -). Pri kódovaní celých čísel sa znamienko zakóduje vždy prvým bitom zľava. Napr. pri použití 1 bajtu bude 10011101 kód pre -29.</p>
+                    <p>Pri použití 1 bajtu (8 bitov – 1 bit znamienko a 7 bitov hodnota), môžeme zakódovať hodnoty -128 až +127 Pri použití 2 bajtov (16 bitov -1 bit znamienko a 15 bitov hodnota), môžeme zakódovať hodnoty -32 768 až +32 767 Pri použití 4 bajtov (32 bitov – 1 bit znamienko a 31 bitov hodnota), môžeme zakódovať hodnoty -2 147 483 648 až +2 147 483 647 Pri použití 4 bajtov (64 bitov – 1 bit znamienko a 63 bitov hodnota), môžeme zakódovať hodnoty -9 223 372 036 854 775 808 až +9 223 372 036 854 775 807</p>
+                    <p>Celé čísla sú v pamäti počítača ukladané v priamom kóde ale pre počítanie s nimi je vhodnejší doplnkový kód, ktorý získame z inverzného kódu.</p>
+
+                    <h3>Kódovanie reálnych čísel</h3>
+                    <p>Reálne čísla môžeme kódovať dvoma spôsobmi:</p>
+                    <ul>
+                        <li>Ako čísla s pevnou rádovou čiarkou (tento spôsob sa väčšinou používa na uloženie meny napr.: 24,50 EUR). Pri tomto spôsobe je niekoľko bitov vyhradených pre celú časť čísla a niekoľko pre desatinnú časť čísla. Ak nám pri nejakej operácii dostaneme väčší počet desatinných miest ako môžeme zakódovať pomocou vyhradeného počtu bitov, vtedy sa zvyšné miesta jednoducho odrežú (prípadne sa číslo zaokrúhli na príslušný počet dvojkových cifier) a nebudú do pamäte počítača uložené.</li>
+                        <li>Ako čísla s pohyblivou rádovou čiarkou – tu je vyhradených niekoľko bitov pre hodnotu čísla (mantisu) a zvyšok je vyhradený pre exponent. Napr.: číslo 126,567 je uložené ako 126567.10-3. V našom prípade je mantisa 126567 a exponent -3. Obe tieto hodnoty sú uložené samozrejme v priamom kóde a majú 1 bit vyhradený pre znamienko.</li>
+                    </ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="foota">&copy; 2020 kristina</div>
+	</div>
+</body>
+</html>
