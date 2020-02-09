@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Kódovanie textu | Kódovanie a šifrovanie</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+
+<body>
+    <div class="kontajner">
+		<div id="hlavicka">
+			<h1><a href="index.html">Kódovanie a šifrovanie</a></h2>
+		</div>
+
+		<div id="obsah">
+			<div id="panel">
+				<ul class="menu">
+					<li><a href="index.html">Úvod<a></li>
+					<li class="aktivne"><a href="kodovanie.html">Kódovanie</a></li class="aktivne">
+					<ul class="vnorene aktivne">
+						<li><a href="kodovanie-cisel.html">Kódovanie čísel</a></li>
+						<li class="aktivne"><a href="kodovanie-textu.html">Kódovanie textu</a></li>
+						<li><a href="kodovanie-obrazkov.html">Kódovanie obrázkov</a></li>
+						<li><a href="kodovanie-ine.html">Iné kódy</a></li>
+					</ul>
+					<li><a href="sifrovanie.html">Šifrovanie</a></li>
+				</ul>
+			</div>
+
+			<div id="okno">
+				<div id="text">
+					<h2>Kódovanie textu</h2>
+                    <p>Na rozdiel od čísel, znaky textu nevieme previesť do dvojkovej sústavy, preto bolo potrebné vymyslieť iný spôsob ako jednoznačne priradiť určitému znaku práve jednu kombináciu núl a jednotiek, ktorá tento znak v počítači bude reprezentovať. Keďže neexistuje žiadny univerzálny spôsob ako to urobiť, každý výrobca počítačov tento problém riešil iným spôsobom, preto existuje viacero znakových kódov. Poriadok do tohto chaosu sa snažil zaviesť americký úrad pre normalizáciu, ktorý vyhlásil jeden spôsob, ktorý by mali všetci používať. Tento spôsob kódovania sa volá ASCII – American Standard Code for Information Interchange (Americký štandardný kód pre výmenu informácií).</p>
+					<p>Tento štandard hovorí, že na zakódovanie každého znaku sa použije 7 bitov. Čo umožňovalo definovať kód pre 128 znakov. Neskôr sa kódovanie rozšírilo na 8 bitov a 256 znakov. Pritom prvá polovica znakov je pre všetky krajiny rovnaká a zvyšných 128 znakov sa pre každú krajinu stanovil podľa ich potrieb. Tento spôsob vniesol do kódovania znakov chaos (veľmi veľké množstvo regionálnych znakových sád), navyše pre znaky niektorých písiem 7-bitový priestor nestačil. Vznikol preto nový spôsob kódovania UNICODE.</p>
+					<p>Toto kódovanie používa 16 a 24 bitov (2 či 3 bajty) na zakódovanie jedného znaku, čo umožňuje zakódovať cca 1,1 milióna možných znakov. Tento počet znakov umožňuje zakódovať znaky všetkých relevantných abecied pomocou jednej medzinárodnej tabuľky. Toto kódovanie zabezpečuje, že ten istý znak má rovnaký kód v každej krajine i na každom type počítača.</p>
+					<p>Nevýhodou tohto kódovania je, že znaky, ktoré sme predtým vedeli zakódovať iba ôsmimi bitmi (jedným bajtom) v ACSII, v Unicode sú kódované 16 a 24 bitmi (dvomi a tromi bajtami), a teda zaberajú viac pamäte ako by zaberal text v kódovaní ASCII. Istým riešením tohoto problému je formát UTF-8. V tomto kódovaní je prvých 128 znakov tabuľky ASCII (tieto sú pre všetky krajiny rovnaké) zakódovaných pomocou 8 bitov a zvyšné znaky sú zakódované 16 a 24 či 32 bitmi (t.j. dvami, tromi alebo štyrmi bajtami). Toto kódovanie je výhodné pre anglicky hovoriace krajiny a krajiny, v ktorých väčšinu znakov textu tvorí len prvých 128 znakov tabuľky ASCII. Ďalšia výhoda je spätná kompatibilita so softvérom, pôvodne navrhnutým pre ASCII resp. 8-bitové znakové sady.</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="foota">&copy; 2020 kristina</div>
+	</div>
+</body>
+</html>
